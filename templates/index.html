@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Book Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Library Book Management System</h1>
+    
+    <!-- Form to Add New Book -->
+    <form id="addBookForm" action="/books" method="POST">
+        <h2>Add a New Book</h2>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="publication_date">Publication Date:</label>
+        <input type="date" id="publication_date" name="publication_date" required>
+        
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
+
+        <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Book List Display -->
+    <h2>Book List</h2>
+    <table id="bookTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publication Date</th>
+                <th>Genre</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Books will be inserted here by JS -->
+        </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
